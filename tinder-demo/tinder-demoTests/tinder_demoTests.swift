@@ -1,14 +1,14 @@
 //
-//  tinderTests.swift
-//  tinderTests
+//  tinder_demoTests.swift
+//  tinder-demoTests
 //
-//  Created by sirius on 02.05.2023.
+//  Created by sirius on 03.05.2023.
 //
 
 import XCTest
-@testable import tinder
+@testable import tinder_demo
 
-class tinderTests: XCTestCase {
+class tinder_demoTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
