@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -17,9 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions:
             [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-
+        self.showModalAuth()
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+////            print(user)
+////            if user == nil {
+//                self.showModalAuth()
+////            }
+//        }
         return true
       }
+    
+    func showModalAuth(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newvc = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
+        self.window?.rootViewController?.present(newvc, animated: true, completion: nil)
+    }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
